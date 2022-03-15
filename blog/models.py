@@ -3,16 +3,19 @@ from django.utils import timezone
 
 class Article(models.Model):
   STATUS_CHOICE = [
-    ("p" , "published"),
-    ('d' , 'draft'),
+    ("p" , "منتشر شده"),
+    ('d' , 'پیش‌نویس'),
   ]
-  title = models.CharField(max_length=200)
-  slug = models.SlugField(unique=True)
-  content = models.TextField()
-  published = models.DateTimeField()
-  thumbnail = models.ImageField(upload_to='images/',default='default.jpg')
-  created = models.DateTimeField(auto_now_add = True)
-  updated = models.DateTimeField(auto_now=True)
-  status = models.CharField(max_length=1, choices=STATUS_CHOICE)
+  title = models.CharField(max_length=200, verbose_name='عنوان')
+  slug = models.SlugField(unique=True, verbose_name="آدرس")
+  content = models.TextField(verbose_name="محتوا")
+  published = models.DateTimeField(verbose_name="تاریخ انشتار")
+  thumbnail = models.ImageField(upload_to='images/',default='default.jpg', verbose_name="عکس")
+  created = models.DateTimeField(auto_now_add = True , verbose_name='تاریخ ایجاد')
+  updated = models.DateTimeField(auto_now=True , verbose_name='آخرین ویرایش در')
+  status = models.CharField(max_length=1, choices=STATUS_CHOICE, verbose_name='وضعیت انتشار')
+  class Meta:
+    verbose_name = 'مقاله'
+    verbose_name_plural = 'مقالات'
   def __str__(self):
     return self.title[:15]
