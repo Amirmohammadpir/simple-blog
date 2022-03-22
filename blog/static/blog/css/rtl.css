@@ -11,7 +11,7 @@
 body {
   direction: rtl;
   text-align: right;
-  font-family: "sahel";
+  font-family: "sahel" !important;
   font-size: 14px;
 }
 .pager {

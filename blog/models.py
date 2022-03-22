@@ -25,7 +25,7 @@ class Article(models.Model):
 
   title = models.CharField(max_length=200, verbose_name='عنوان')
   slug = models.SlugField(unique=True, verbose_name="آدرس")
-  category = models.ManyToManyField(Category, verbose_name='دسته بندی')
+  category = models.ManyToManyField(Category, verbose_name='دسته بندی', related_name = "articles")
   content = models.TextField(verbose_name="محتوا")
   published = models.DateTimeField(verbose_name="تاریخ انشتار")
   thumbnail = models.ImageField(upload_to='images/',default='default.jpg', verbose_name="عکس")

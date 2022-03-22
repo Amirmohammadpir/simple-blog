@@ -42,7 +42,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    {% for article in articles_list %}
+                    {% for article in category.articles.all %}
                     <!-- Divider-->
                     <hr class="my-4">
                     <!-- Post preview-->
@@ -58,7 +58,7 @@
                         </p>
                         <div>
                             {% for cat in article.category.all %}
-                                <a href="{% url 'category' cat.slug%}">, {{cat.title}}</a>
+                                <a href="#">, {{cat.title}}</a>
                             {% endfor%}
                         </div>
                     </div>
