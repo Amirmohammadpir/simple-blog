@@ -57,7 +57,7 @@
                             {{article.jpublished}}
                         </p>
                         <div>
-                            {% for cat in article.category.all %}
+                            {% for cat in article.categorypub.all %}
                                 <a href="#">, {{cat.title}}</a>
                             {% endfor%}
                         </div>

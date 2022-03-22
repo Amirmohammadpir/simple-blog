@@ -43,3 +43,9 @@ class Article(models.Model):
   def jpublished(self):
     return jalali_converter(self.published)
   jpublished.short_description = 'زمان انتشار'
+  
+  def categorypub(self):
+    return self.category.filter(status=True)
+
+
+
