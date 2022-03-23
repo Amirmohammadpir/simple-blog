@@ -11202,7 +11202,7 @@ header.masthead .site-heading .h1 {
 }
 
 .section-heading {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-top: 3.75rem;
 }
@@ -11243,6 +11243,6 @@ header.masthead .site-heading .h1 {
 }
 @media (min-width: 992px) {
   .post-preview > a > .post-title {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }

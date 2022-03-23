@@ -7,7 +7,9 @@
        url('Sahel.ttf') format('truetype');
 
 }
-
+* {
+  font-family: "sahel" !important;
+}
 body {
   direction: rtl;
   text-align: right;
