@@ -4,14 +4,14 @@ from .models import Article, Category
 
 def home(request):
 
-  context = {'articles_list': Article.objects.filter(status="p"),}
+  context = {'articles_list': Article.objects.published(),}
 
   return render(request, 'blog/index.html', context)
 
 
 def detail(request, slug):
 
-  context= {'article_detail': get_object_or_404(Article, slug=slug, status="p")}
+  context= {'article_detail': get_object_or_404(Article.objects.published(), slug=slug,) }
 
   return render(request, 'blog/post.html', context)
 
