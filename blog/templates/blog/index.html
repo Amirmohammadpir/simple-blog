@@ -64,7 +64,12 @@
                     </div>
                     {% endfor %}
                     <!-- Pager-->
-                    <div class="pager d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">پست های قدیمی &larr;</a></div>
+                    {% if articles_list.has_next %}
+                        <div class="pager d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="{% url 'home' articles_list.next_page_number %}">پست های قدیمی &larr;</a></div>
+                    {% endif %}
+                    {% if articles_list.has_previous %}
+                        <div class="pager d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase ms-2" href="{% url 'home' articles_list.previous_page_number%}"> &rarr; پست های جدید</a></div>
+                    {% endif %}
                 </div>
             </div>
         </div>
